@@ -143,3 +143,22 @@ off automatically for anyone with reduced-motion turned on.
 
 NOVEM is not affiliated with the IELTS partners. Band estimates are practice guidance, not official
 scores.
+
+
+---
+
+## Deploying to Vercel
+
+The `api/` folder holds the same marking engine as `server/`, packaged as serverless functions. Vercel
+runs those and serves the built front end; `npm run dev` locally still uses the Express server, so nothing
+about local development changes.
+
+1. Push the project to GitHub.
+2. On vercel.com, New Project, import the repo.
+3. Vercel detects Vite. Leave every build setting as it autofills.
+4. Before deploying, open Environment Variables and add:
+   - `GROQ_API_KEY` — your key
+   - `GROQ_MODEL` — `llama-3.3-70b-versatile`
+5. Deploy.
+
+No card is required on the hobby tier, and there are no cold starts, so a shared link loads immediately.
