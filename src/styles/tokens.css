@@ -1,0 +1,127 @@
+:root {
+  /* Palette: black ground, red as the only loud voice, navy as the quiet second surface */
+  --black: #000000;
+  --coal: #101014;
+  --coal-2: #17171d;
+  --navy: #0d1734;
+  --navy-2: #142149;
+  --red: #e01e37;
+  --red-deep: #7d0d1e;
+  --red-glow: rgba(224, 30, 55, 0.35);
+  --white: #ffffff;
+  --chalk: #b9bac6;
+  --chalk-dim: #77798a;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+
+  --ok: #29c17e;
+  --warn: #e8a33d;
+
+  --display: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif;
+  --body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+
+  /* Type scale, 1.25 ratio off a 17px body */
+  --t-xs: 0.72rem;
+  --t-sm: 0.84rem;
+  --t-base: 1.0625rem;
+  --t-lg: 1.33rem;
+  --t-xl: 1.66rem;
+  --t-2xl: 2.1rem;
+  --t-3xl: 2.9rem;
+  --t-4xl: 4rem;
+
+  --gap: 1.25rem;
+  --rail: 254px;
+  --radius: 3px;
+  --radius-lg: 10px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: var(--t-base);
+  line-height: 1.62;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(2.2rem, 5.2vw, var(--t-4xl)); font-weight: 800; letter-spacing: -0.035em; }
+h2 { font-size: clamp(1.6rem, 3.4vw, var(--t-2xl)); }
+h3 { font-size: var(--t-lg); }
+
+p { margin: 0 0 1em; max-width: 68ch; color: var(--chalk); }
+p strong, li strong { color: var(--white); font-weight: 500; }
+
+a { color: var(--white); text-underline-offset: 4px; text-decoration-color: var(--red); }
+a:hover { color: var(--red); }
+
+button { font: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+::selection { background: var(--red); color: var(--white); }
+
+/* ---------- motion ---------- */
+
+@keyframes tick-rise {
+  from { transform: scaleY(0.08); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes lift-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes sweep {
+  from { transform: translateX(-101%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { transform: scaleY(0.4); opacity: 0.45; }
+  40% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.16); }
+}
+
+@keyframes bar-jump {
+  0%, 100% { transform: scaleY(0.22); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
