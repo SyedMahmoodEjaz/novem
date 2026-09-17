@@ -5,6 +5,8 @@ import Thinking from '../components/Thinking.jsx';
 import { READING } from '../data/reading.js';
 import { rawToBand } from '../data/bands.js';
 import { coach } from '../lib/api.js';
+import { ReadingPlaybook } from '../components/Playbook.jsx';
+import Reveal, { RevealOnView } from '../components/Reveal.jsx';
 
 export default function Reading() {
   const [idx, setIdx] = useState(0);
@@ -42,15 +44,22 @@ export default function Reading() {
 
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Section 02 · Reading</div>
         <h1>Sixty minutes, forty answers, no time to read properly.</h1>
         <p className="lede">
           Reading is a search task, not a comprehension task. Work out what the question is asking for,
           find the paraphrase in the passage, take the answer, move on.
         </p>
-      </div>
+      </Reveal>
 
+      <RevealOnView>
+        <div style={{ marginBottom: '2rem' }}>
+          <ReadingPlaybook />
+        </div>
+      </RevealOnView>
+
+      <div className="gate-q" style={{ fontSize: 'var(--t-lg)', marginBottom: '0.8rem' }}>Choose a passage</div>
       <div className="row" style={{ marginBottom: '1.25rem' }}>
         {READING.map((t, i) => (
           <button key={t.id} className={`opt ${idx === i ? 'picked' : ''}`} onClick={() => reset(i)}>

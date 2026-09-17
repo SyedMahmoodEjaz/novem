@@ -1,10 +1,12 @@
 import React from 'react';
 import { RESOURCES } from '../data/resources.js';
 
+import Reveal, { RevealOnView } from '../components/Reveal.jsx';
+
 export default function Library() {
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Study library</div>
         <h1>Practise here. Take the real papers from the people who write them.</h1>
         <p className="lede">
@@ -12,7 +14,7 @@ export default function Library() {
           either. Everything below is free unless marked otherwise, and the official material comes first
           because it is the only material that matches the real test.
         </p>
-      </div>
+      </Reveal>
 
       {RESOURCES.map((group) => (
         <div key={group.group} style={{ marginBottom: '2.4rem' }}>

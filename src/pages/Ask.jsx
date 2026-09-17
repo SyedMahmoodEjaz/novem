@@ -9,6 +9,8 @@ const STARTERS = [
   'I keep scoring 6.5 in Writing. What usually blocks people at that level?'
 ];
 
+import Reveal, { RevealOnView } from '../components/Reveal.jsx';
+
 export default function Ask() {
   const [turns, setTurns] = useState([]);
   const [q, setQ] = useState('');
@@ -29,14 +31,14 @@ export default function Ask() {
 
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Ask the coach</div>
         <h1>Anything about the test, answered for the test.</h1>
         <p className="lede">
           Rules, timing, scoring, strategy, what to do the week before. Ask in whatever English you have:
           you are not being marked here.
         </p>
-      </div>
+      </Reveal>
 
       <div className="panel">
         {turns.length === 0 ? (

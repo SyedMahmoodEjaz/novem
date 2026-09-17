@@ -6,6 +6,8 @@ import { LISTENING } from '../data/listening.js';
 import { rawToBand } from '../data/bands.js';
 import { canSpeak, speakScript, stopSpeaking } from '../lib/speech.js';
 import { coach } from '../lib/api.js';
+import { ListeningPlaybook } from '../components/Playbook.jsx';
+import Reveal, { RevealOnView } from '../components/Reveal.jsx';
 
 export default function Listening() {
   const [setIdx, setSetIdx] = useState(0);
@@ -60,14 +62,20 @@ export default function Listening() {
 
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Section 01 · Listening</div>
         <h1>You hear it once. Everything depends on reading ahead.</h1>
         <p className="lede">
           These recordings are spoken by your browser, so the accent and speed are close to the test but
           not identical. Read the questions first, play once, and only then check.
         </p>
-      </div>
+      </Reveal>
+
+      <RevealOnView>
+        <div style={{ marginBottom: '2rem' }}>
+          <ListeningPlaybook />
+        </div>
+      </RevealOnView>
 
       {!canSpeak && (
         <p className="alert">
@@ -76,6 +84,7 @@ export default function Listening() {
         </p>
       )}
 
+      <div className="gate-q" style={{ fontSize: 'var(--t-lg)', marginBottom: '0.8rem' }}>Choose a recording</div>
       <div className="row" style={{ marginBottom: '1.25rem' }}>
         {LISTENING.map((t, i) => (
           <button key={t.id} className={`opt ${setIdx === i ? 'picked' : ''}`} onClick={() => reset(i)}>

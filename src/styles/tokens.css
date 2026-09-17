@@ -125,3 +125,26 @@ button { font: inherit; cursor: pointer; }
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- staged reveal + disclosure motion ---------- */
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes wipe-right {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes count-glow {
+  0%   { text-shadow: 0 0 0 transparent; }
+  50%  { text-shadow: 0 0 26px var(--red-glow); }
+  100% { text-shadow: 0 0 0 transparent; }
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}

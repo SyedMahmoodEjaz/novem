@@ -11,9 +11,9 @@ official material.
 | Page | What it does |
 |---|---|
 | How the exam works | Interactive 0–9 band scale, the overall-band rounding rule, format and timing for each section, and where candidates lose marks |
-| Listening | Practice recordings spoken aloud by the browser, question sets, auto-marking, raw-score-to-band conversion, transcript on demand |
-| Reading | Academic and General Training passages with a 20-minute clock, auto-marking, and an explanation of the trap behind every wrong answer |
-| Writing | Five real task types, task clock, live word count, then full examiner marking across the four criteria plus line-by-line corrections and a paragraph rewritten at band 8 |
+| Listening | Four practice recordings covering all four exam parts, spoken aloud by the browser, plus the part-by-part format table, six question types and five technique rules |
+| Reading | Four passages (Academic and General Training) with a 20-minute clock, plus the passage breakdown, minute-by-minute plan, seven question types, which types follow text order, and five technique rules |
+| Writing | Seventeen tasks covering all seven Task 1 visual types, three General Training letter types and all five Task 2 question shapes, plus the 40-minute breakdown, the first-five-minutes procedure and the PEEL paragraph model |
 | Speaking | Record your voice (or type), get marked on the four speaking criteria, or run a live mock test where an AI examiner asks questions out loud, Part 1, 2 or 3 |
 | Study library | Official British Council, IELTS.org, IDP and Cambridge resources, plus a four-week plan |
 | Ask the coach | Free-form questions about rules, scoring and strategy |
@@ -132,14 +132,28 @@ Adding a new Listening or Reading test is just another object in those data file
 
 ---
 
+## Practice content
+
+| Section | What is in the bank |
+|---|---|
+| Listening | 4 recordings: Part 1 enquiry, Part 2 orientation talk, Part 3 tutorial, Part 4 lecture |
+| Reading | 4 passages: 2 Academic, 2 General Training |
+| Writing | 17 tasks across Academic Task 1, General Training Task 1 and Task 2 |
+| Speaking | 14 Part 1 questions, 10 Part 2 cue cards, 12 Part 3 discussion questions |
+
+Every page opens as a short list of headings that expand where you ask, rather than showing
+everything at once. The reference material sits in collapsed panels above the practice.
+
 ## Design notes
 
 The band scale is the motif the whole interface is built on: it is the hero element, the shape of every
 result, and the reason for the name. Palette is black ground, white text, one red for anything that
-carries a score or an action, and navy for the quieter second surface. Animations: the scale ticks rise
-in sequence on load, score bars sweep in when results arrive, the recorder waveform reacts while you
-speak, timers spin, corrections shift under the cursor, pages lift in on navigation. All of it switches
-off automatically for anyone with reduced-motion turned on.
+carries a score or an action, and navy for the quieter second surface. Animations: page content arrives in
+sequence rather than all at once, sections further down reveal as they scroll into view, panels open
+with a measured height slide and a red underline that wipes in, the scale ticks rise in sequence on
+load, score bars sweep in when results arrive, the recorder waveform reacts while you speak, timers
+spin, and corrections shift under the cursor. All of it switches off automatically for anyone with
+reduced-motion turned on.
 
 NOVEM is not affiliated with the IELTS partners. Band estimates are practice guidance, not official
 scores.

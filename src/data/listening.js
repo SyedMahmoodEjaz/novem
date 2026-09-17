@@ -59,4 +59,63 @@ export const LISTENING = [
       { q: 'According to the Melbourne modelling, canopy cover should reach what percentage of the street surface? Write a number.', type: 'gap', a: '40', accept: ['40', '40%', 'forty'], why: 'The projection assumed canopy cover of about forty percent, giving a two degree reduction.' }
     ]
   }
+  ,
+  {
+    id: 'l3',
+    part: 'Part 2',
+    title: 'Orientation talk at Ashdown Country Park',
+    context: 'A park ranger welcomes a group of new volunteers and describes the site. Part 2 is one speaker, and the questions often involve a map or a sequence.',
+    lines: [
+      { s: 'Ranger', t: 'Good morning everyone, and welcome to Ashdown Country Park. I am Ellie, one of the two full-time rangers here, and I will be running your induction today.' },
+      { s: 'Ranger', t: 'Let me start with the layout, because new volunteers do get lost in the first week. You came in through the main gate on the south side, and the visitor centre is the long low building immediately to your left as you enter.' },
+      { s: 'Ranger', t: 'Directly opposite the visitor centre, on the other side of the car park, is the equipment store. That is where you collect tools, and it is the grey building with the green doors. Please do not confuse it with the maintenance shed, which is further north and is staff only.' },
+      { s: 'Ranger', t: 'If you follow the main path north from the visitor centre for about ten minutes you reach the lake. The bird hide sits at the eastern end of the lake, tucked behind a screen of willows, and the wildflower meadow is on the western side, opposite the hide.' },
+      { s: 'Ranger', t: 'Now, the work itself. Volunteers usually choose one of three areas. Habitat management is the most physical: clearing scrub, coppicing, repairing fences. Visitor engagement means running the welcome desk and guided walks. And species monitoring involves surveys, mostly birds and butterflies.' },
+      { s: 'Ranger', t: 'I should say that species monitoring sounds appealing to everyone, but it requires the most training, about six weeks before you can record independently, so most people begin elsewhere.' },
+      { s: 'Ranger', t: 'Shifts are four hours. The morning shift runs eight until twelve, and the afternoon shift one until five. We ask for a minimum of two shifts a month, although the majority of our volunteers do closer to four.' },
+      { s: 'Ranger', t: 'A few practical points. Wear boots, not trainers. We provide waterproofs and gloves, so do not buy your own. Bring a packed lunch, because the cafe closes at weekends outside the summer season.' },
+      { s: 'Ranger', t: 'And finally, parking. Volunteers do not use the main visitor car park, which fills by ten on a Sunday. Use the overflow area behind the equipment store, and display the permit I will give you at the end of this talk.' }
+    ],
+    questions: [
+      { q: 'The equipment store is', type: 'choice', opts: ['next to the visitor centre', 'across the car park from the visitor centre', 'north of the maintenance shed'], a: 'across the car park from the visitor centre', why: 'She says it is directly opposite the visitor centre, on the other side of the car park. Directional prepositions are the whole point of Part 2.' },
+      { q: 'The bird hide is at which end of the lake?', type: 'gap', a: 'eastern', accept: ['eastern', 'east', 'the eastern end'], why: 'The hide is at the eastern end behind willows; the meadow is opposite it on the western side.' },
+      { q: 'Which volunteer area requires the most training?', type: 'choice', opts: ['Habitat management', 'Visitor engagement', 'Species monitoring'], a: 'Species monitoring', why: 'She flags it as the one that sounds appealing but needs about six weeks of training first.' },
+      { q: 'What is the minimum number of shifts per month? Write a number.', type: 'gap', a: '2', accept: ['2', 'two'], why: 'Two is the minimum. Four is what most volunteers actually do, which is the distractor.' },
+      { q: 'Volunteers are told to bring their own', type: 'choice', opts: ['waterproofs', 'gloves', 'boots'], a: 'boots', why: 'Waterproofs and gloves are provided. Boots are the one item volunteers supply themselves.' },
+      { q: 'Volunteers should park behind the', type: 'gap', a: 'equipment store', accept: ['equipment store', 'equipment store', 'store'], why: 'The overflow area behind the equipment store, not the main visitor car park.' }
+    ]
+  },
+  {
+    id: 'l4',
+    part: 'Part 3',
+    title: 'Tutorial: planning a research project',
+    context: 'Two students and their tutor discuss a project proposal. Part 3 is fast, with several speakers, and questions often ask who said what.',
+    lines: [
+      { s: 'Tutor', t: 'Right, so you have both read the brief. Priya, where are you thinking of taking this?' },
+      { s: 'Priya', t: 'I want to look at how supermarket layout affects what people actually buy. There is a lot of existing work, so I would be replicating rather than breaking new ground.' },
+      { s: 'Tutor', t: 'Replication is perfectly respectable at this level. Daniel?' },
+      { s: 'Daniel', t: 'I was more drawn to online behaviour, honestly. Tracking how recommendation algorithms shape a shopping basket. But I am worried I cannot get the data.' },
+      { s: 'Tutor', t: 'That is the right worry to have. Every year somebody designs a beautiful study and then discovers the company will not share anything.' },
+      { s: 'Priya', t: 'Could you not use a simulated store? Build a mock site and control the recommendations yourself?' },
+      { s: 'Daniel', t: 'I had not considered that. It would solve the access problem, though it costs me realism. People behave differently when they know it is not real money.' },
+      { s: 'Tutor', t: 'They do, and you would need to say so explicitly in your limitations section. But I would rather see a modest study you can actually complete than an ambitious one that stalls in week four.' },
+      { s: 'Priya', t: 'My concern is different. Mine is feasible, but is it interesting enough? It feels a bit safe.' },
+      { s: 'Tutor', t: 'Then sharpen the question rather than changing the topic. Instead of asking whether layout affects purchasing, which we know it does, ask which shoppers are most affected. Age, or whether they shop with a list.' },
+      { s: 'Priya', t: 'That is much better. The list thing especially, because it is easy to ask about.' },
+      { s: 'Daniel', t: 'And the sample size? I keep reading that you need hundreds of people.' },
+      { s: 'Tutor', t: 'Not for this. Forty to sixty is defensible for an undergraduate project if your design is tight. What examiners punish is a loose design, not a small sample.' },
+      { s: 'Tutor', t: 'One more thing, and this applies to both of you. Get your ethics approval submitted this week. It takes a fortnight to come back, and you cannot collect a single response before it does.' }
+    ],
+    questions: [
+      { q: 'Who is worried about getting access to data?', type: 'choice', opts: ['Priya', 'Daniel', 'The tutor'], a: 'Daniel', why: 'Daniel raises it about his online study. Part 3 questions often turn on which speaker holds which view.' },
+      { q: 'Priya suggests Daniel could use a', type: 'gap', a: 'simulated store', accept: ['simulated store', 'mock site', 'simulated shop'], why: 'She proposes building a mock site so he controls the recommendations himself.' },
+      { q: 'The drawback of that suggestion is a loss of', type: 'gap', a: 'realism', accept: ['realism', 'reality'], why: 'Daniel says it costs him realism, because people behave differently when the money is not real.' },
+      { q: 'The tutor advises Priya to', type: 'choice', opts: ['change her topic entirely', 'narrow her research question', 'increase her sample size'], a: 'narrow her research question', why: 'He explicitly says to sharpen the question rather than change the topic.' },
+      { q: 'What sample size does the tutor consider defensible?', type: 'choice', opts: ['20 to 30', '40 to 60', 'Several hundred'], a: '40 to 60', why: 'Forty to sixty, provided the design is tight. The several hundred figure is what Daniel had read, which is the distractor.' },
+      { q: 'How long does ethics approval take to come back?', type: 'gap', a: 'a fortnight', accept: ['a fortnight', 'fortnight', 'two weeks', '2 weeks'], why: 'A fortnight, which is why he tells them to submit this week.' }
+    ]
+  }
 ];
+
+// Keep the sets in exam order regardless of the order they were written in.
+LISTENING.sort((a, b) => a.part.localeCompare(b.part));

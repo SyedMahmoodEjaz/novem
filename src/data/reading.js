@@ -39,4 +39,50 @@ export const READING = [
       { q: 'This notice sets out the rules for remote working.', type: 'choice', opts: ['True', 'False', 'Not Given'], a: 'False', why: 'The last paragraph says remote working falls under a separate agreement and is not covered here.' }
     ]
   }
+  ,
+  {
+    id: 'r3',
+    kind: 'Academic',
+    title: 'The quiet revolution in weather forecasting',
+    body: [
+      'For most of the twentieth century, forecasting the weather meant solving equations. Meteorologists divided the atmosphere into a grid, measured what they could at each point, and applied the physics of fluid motion to calculate what would happen next. The approach was principled, computationally brutal, and slowly improving: between 1980 and 2020, the useful range of a forecast extended by roughly one day per decade.',
+      'That improvement came at enormous cost. A modern physical model runs on a supercomputer occupying a warehouse, consumes megawatts of power, and takes hours to produce a single global forecast. The economics were accepted as unavoidable. Weather is chaotic, the reasoning went, and only by simulating the physics in ever finer detail could the chaos be held at bay a little longer.',
+      'In 2023 that assumption was publicly challenged. Several research groups demonstrated machine-learning systems that, rather than solving the equations, had been trained on four decades of archived atmospheric observations. Given the current state of the atmosphere, these systems predicted the next state directly, having learned the patterns rather than the physics. On standard measures of accuracy at the medium range of three to ten days, they matched and in several cases exceeded the established physical models.',
+      'The efficiency gain was the more startling result. A forecast that took a supercomputer hours could be produced in under a minute on a single specialised processor. The energy required fell by something close to four orders of magnitude. For national weather services in poorer countries, which had been priced out of running their own models, the implications were immediate.',
+      'Enthusiasm has been tempered by a specific and serious objection. A model trained on the past has only ever seen the past. Physical models, whatever their expense, encode laws that hold regardless of whether a particular configuration of the atmosphere has occurred before. A learned model asked to forecast a genuinely unprecedented event, a heatwave hotter than any in the training archive, may fail in ways that are difficult to anticipate and, critically, difficult to detect in advance. Early evidence suggests such systems tend to under-predict the intensity of extremes, smoothing towards the average because the average is what they mostly saw.',
+      'The emerging consensus is therefore not replacement but division of labour. Learned models handle the routine medium-range forecast, cheaply and quickly, and can be run thousands of times to map the range of possible outcomes. Physical models are held in reserve for the extreme and the unfamiliar, and remain the source of the training archives on which the learned systems depend. It is an arrangement with an obvious circularity, and one that nobody has yet found a way to escape.'
+    ],
+    questions: [
+      { q: 'Between 1980 and 2020, forecast range improved by about one day every', type: 'gap', a: 'decade', accept: ['decade', 'ten years', '10 years'], why: 'Stated at the end of paragraph one. A question that simply asks for a number or a unit is usually locatable in a single sentence.' },
+      { q: 'Machine-learning forecast systems were trained on', type: 'choice', opts: ['the equations of fluid motion', 'archived atmospheric observations', 'simulations from physical models'], a: 'archived atmospheric observations', why: 'Paragraph three: four decades of archived observations. The other two options name real things from the passage placed in the wrong role.' },
+      { q: 'The learned models proved more accurate than physical models at every forecast range.', type: 'choice', opts: ['True', 'False', 'Not Given'], a: 'False', why: 'The passage restricts the claim to the medium range of three to ten days. A statement that widens a limited claim is False, not Not Given.' },
+      { q: 'The reduction in energy use was close to how many orders of magnitude? Write a number.', type: 'gap', a: '4', accept: ['4', 'four'], why: 'Paragraph four states close to four orders of magnitude.' },
+      { q: 'Poorer countries benefit because they had previously been unable to afford', type: 'gap', a: 'their own models', accept: ['their own models', 'own models', 'running their own models', 'models'], why: 'They had been priced out of running their own models.' },
+      { q: 'The main objection to learned models is that they may fail when facing', type: 'choice', opts: ['very short-range forecasts', 'unprecedented events', 'forecasts for small regions'], a: 'unprecedented events', why: 'Paragraph five: a model trained on the past has only ever seen the past, and may fail on something genuinely unprecedented.' },
+      { q: 'Learned systems tend to predict extreme events as being', type: 'choice', opts: ['more intense than they are', 'less intense than they are', 'accurate but delayed'], a: 'less intense than they are', why: 'They under-predict intensity, smoothing towards the average.' },
+      { q: 'The writer describes the final arrangement between the two approaches as', type: 'choice', opts: ['temporary', 'circular', 'inefficient'], a: 'circular', why: 'The closing sentence calls it an arrangement with an obvious circularity: learned models depend on the physical models for their training data.' }
+    ]
+  },
+  {
+    id: 'r4',
+    kind: 'General Training',
+    title: 'Tenancy handbook: repairs and responsibilities',
+    body: [
+      'This section sets out who is responsible for what when something in your home needs repair. Please read it before reporting a fault, as charges may apply for work that falls to the tenant.',
+      'The landlord is responsible for the structure and exterior of the property, including the roof, walls, windows and external doors. The landlord also maintains the installations for supplying water, gas, electricity and sanitation, which covers basins, sinks, baths and toilets, together with fixed heaters and water heaters.',
+      'The tenant is responsible for minor items and for anything damaged through misuse or neglect. This includes replacing light bulbs, fuses in plugs, batteries in smoke alarms, and internal door handles. Blocked sinks and toilets are the tenant\'s responsibility unless the blockage is shown to be caused by a defect in the pipework itself.',
+      'Repairs are classified in three categories. Emergency repairs, meaning anything presenting an immediate risk to health, safety or security, are attended within 24 hours. Examples are a total loss of heating in winter, a major leak, or an insecure external door. Urgent repairs, such as a partial loss of heating or a leaking roof that is not causing immediate damage, are attended within five working days. Routine repairs are completed within 28 days.',
+      'Report all repairs through the tenant portal or by telephone. Reports made by email are not monitored outside office hours and should not be used for emergencies. When you report a fault you will be given a reference number; quote this in any follow-up.',
+      'You may not carry out structural alterations, remove fitted units, or install any gas or electrical fitting without written permission. Redecorating in reasonable colours does not require permission, but you may be asked to return walls to a neutral shade at the end of the tenancy. Permission for a satellite dish is granted only where a communal aerial is unavailable.'
+    ],
+    questions: [
+      { q: 'Who is responsible for replacing a smoke alarm battery?', type: 'choice', opts: ['The landlord', 'The tenant', 'Either party'], a: 'The tenant', why: 'Listed in paragraph three among the minor items belonging to the tenant.' },
+      { q: 'A blocked sink is the landlord\'s responsibility if the blockage is caused by a defect in the', type: 'gap', a: 'pipework', accept: ['pipework', 'pipes', 'the pipework'], why: 'The one exception given to the tenant\'s responsibility for blockages.' },
+      { q: 'An insecure external door would be classified as', type: 'choice', opts: ['an emergency repair', 'an urgent repair', 'a routine repair'], a: 'an emergency repair', why: 'Given as an example of an immediate risk to security, attended within 24 hours.' },
+      { q: 'Urgent repairs are attended within how many working days? Write a number.', type: 'gap', a: '5', accept: ['5', 'five'], why: 'Five working days for urgent; 24 hours for emergency; 28 days for routine. Each category has its own figure.' },
+      { q: 'Emergency repairs may be reported by email.', type: 'choice', opts: ['True', 'False', 'Not Given'], a: 'False', why: 'Paragraph five states email is not monitored outside office hours and should not be used for emergencies.' },
+      { q: 'Redecorating requires written permission from the landlord.', type: 'choice', opts: ['True', 'False', 'Not Given'], a: 'False', why: 'Redecorating in reasonable colours does not require permission, though a neutral shade may be required at the end of the tenancy.' },
+      { q: 'A satellite dish is permitted only when there is no communal', type: 'gap', a: 'aerial', accept: ['aerial', 'communal aerial', 'antenna'], why: 'The final sentence of the handbook extract.' }
+    ]
+  }
 ];

@@ -6,6 +6,7 @@ import BandReport from '../components/BandReport.jsx';
 import { SPEAKING } from '../data/tasks.js';
 import { canListen, listen, say, stopSpeaking } from '../lib/speech.js';
 import { coach, parseJSON } from '../lib/api.js';
+import Reveal from '../components/Reveal.jsx';
 
 function Recorder({ transcript, setTranscript, onError }) {
   const [on, setOn] = useState(false);
@@ -56,14 +57,14 @@ export default function Speaking() {
   const [mode, setMode] = useState('single');
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Section 04 · Speaking</div>
         <h1>Eleven minutes of talking, marked on how you cope, not on being right.</h1>
         <p className="lede">
           There are no correct opinions in Speaking. You are marked on fluency, vocabulary, grammar and
           pronunciation, so a confident wrong opinion beats a hesitant clever one.
         </p>
-      </div>
+      </Reveal>
 
       <div className="row" style={{ marginBottom: '1.5rem' }}>
         <button className={`opt ${mode === 'single' ? 'picked' : ''}`} onClick={() => setMode('single')}>

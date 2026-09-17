@@ -4,9 +4,13 @@ import Thinking from '../components/Thinking.jsx';
 import BandReport from '../components/BandReport.jsx';
 import { WRITING_TASKS } from '../data/tasks.js';
 import { coach, parseJSON } from '../lib/api.js';
+import { WritingPlaybook } from '../components/Playbook.jsx';
+import Reveal, { RevealOnView } from '../components/Reveal.jsx';
+
+const GROUPS = [...new Set(WRITING_TASKS.map((t) => t.group))];
 
 export default function Writing() {
-  const [taskId, setTaskId] = useState(WRITING_TASKS[2].id);
+  const [taskId, setTaskId] = useState('w-t2-discuss');
   const [text, setText] = useState('');
   const [running, setRunning] = useState(false);
   const [report, setReport] = useState(null);
@@ -45,20 +49,34 @@ export default function Writing() {
 
   return (
     <div className="page">
-      <div className="page-head">
+      <Reveal step={110} className="page-head">
         <div className="page-kicker"><i />Section 03 · Writing</div>
         <h1>Two tasks, four criteria, and one hour that disappears.</h1>
         <p className="lede">
           Write against the clock, then get the same four marks a real examiner gives, with every error
           named. Task 2 is worth twice Task 1, so if you are short of time, sacrifice Task 1.
         </p>
-      </div>
+      </Reveal>
 
-      <div className="row" style={{ marginBottom: '1.25rem' }}>
-        {WRITING_TASKS.map((t) => (
-          <button key={t.id} className={`opt ${taskId === t.id ? 'picked' : ''}`} onClick={() => pick(t.id)}>
-            {t.label}
-          </button>
+      <RevealOnView>
+        <div style={{ marginBottom: '2rem' }}>
+          <WritingPlaybook />
+        </div>
+      </RevealOnView>
+
+      <div className="gate-q" style={{ fontSize: 'var(--t-lg)', marginBottom: '0.8rem' }}>Choose a task</div>
+      <div style={{ marginBottom: '1.6rem' }}>
+        {GROUPS.map((g) => (
+          <div key={g} style={{ marginBottom: '0.9rem' }}>
+            <div className="fact-k" style={{ marginBottom: '0.45rem' }}>{g}</div>
+            <div className="row">
+              {WRITING_TASKS.filter((t) => t.group === g).map((t) => (
+                <button key={t.id} className={`opt ${taskId === t.id ? 'picked' : ''}`} onClick={() => pick(t.id)}>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
 
